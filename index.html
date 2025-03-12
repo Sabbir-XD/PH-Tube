@@ -6,6 +6,12 @@
     <title>PH-TUBE</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .active{
+            background-color: #FF1F3D;
+            color: white;
+        }
+    </style>
 </head>
 <body class="w-11/12 mx-auto">
     <!-- header part html start -->
@@ -55,7 +61,13 @@
         </div> -->
      </section>
 
-
+      <!-- no contain here  -->
+       <section class="py-16 hidden">
+        <div class="flex flex-col justify-center items-center">
+            <img src="asset/Icon.png" alt="">
+            <p class="text-3xl font-bold text-center">Oops!! Sorry, There is no <br> content here</p>
+         </div>
+       </section>
     <!-- script linkUP -->
      <script src="script/script.js"></script>
  </body>

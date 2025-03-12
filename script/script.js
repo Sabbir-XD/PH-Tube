@@ -1,3 +1,10 @@
+function removeActiveClass(){
+    const activeButtons = document.getElementsByClassName("active");
+    for(const activeButton of activeButtons){
+        activeButton.classList.remove("active");
+    }
+}
+
 //Button-catrogory-add-dynamicly-in-api
 async function dynamicCatagory(){
     try{
@@ -27,15 +34,24 @@ const dynamicCatagoryVideos = async (id) => {
    
    fetch(url)
    .then(response => response.json())
-   .then(data => displayVideo(data.category));
+   .then(data => {
+    removeActiveClass();
+    const clickBtn = document.getElementById(`btn-${id}`);
+    clickBtn.classList.add("active");
+    displayVideo(data.category);
+   });
 }
+
+
+
 //Display-catagory-show-in-user-interface
 function displayCatagory(catagorys){
     const catagoryContainer = document.getElementById("catagory-container");
+
     for(const cat of catagorys){
         const div =document.createElement("div");
         div.innerHTML =`
-        <button onClick="dynamicCatagoryVideos(${cat.category_id})" class="btn btn-sm hover:bg-[#FF1F3D] hover:text-white">${cat.category}</button>
+        <button id="btn-${cat.category_id}" onClick="dynamicCatagoryVideos(${cat.category_id})" class="btn btn-sm hover:bg-[#FF1F3D] hover:text-white">${cat.category}</button>
         `;
         catagoryContainer.appendChild(div);
 
@@ -47,6 +63,17 @@ function displayCatagory(catagorys){
 const displayVideo =(videos)=>{
     const videoContainer = document.getElementById("video-container");
     videoContainer.innerHTML = "";
+     
+    if(videos.length === 0){
+        videoContainer.innerHTML = `
+          <section class="py-16 col-span-full">
+            <div class="flex flex-col justify-center items-center">
+                <img src="asset/Icon.png" alt="">
+                <p class="text-3xl font-bold text-center">Oops!! Sorry, There is no <br> content here</p>
+            </div>
+          </section>`;
+        return;
+    }
     videos.forEach(video => {
         console.log(video);
         const div = document.createElement("div");
