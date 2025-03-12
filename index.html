@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PH-TUBE</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    
-</body>
+<body class="w-11/12 mx-auto">
+    <!-- header part html start -->
+     <header class="items-center border-b-2 border-[#17171720] py-5">
+        <nav class="flex justify-between">
+           <div class="logo">
+            <img class="w-[150px]" src="asset/Logo.png" alt="">
+           </div>
+           <div class="sort hidden md:flex">
+             <button class="btn ">Sort By View</button>
+           </div>
+           <div class="blog">
+             <button class="btn bg-[#FF1F3D] text-white">Blogs</button>
+           </div>
+        </nav>
+     </header>
+
+   <!-- Dynamic Category Section -->
+    <section id="catagory-container" class="flex justify-center gap-3 md:gap-6 py-5">
+        <div>
+            <button onclick="dynamicVideo()" class="btn btn-sm hover:bg-[#FF1F3D] hover:text-white">ALL</button>
+        </div>
+    </section>
+
+
+    <!-- Create Dynamic Video Sections -->
+     <section id="video-container" class="grid grid-cols-1 md:grid-cols-4 gap-5" >
+        <!-- <div class="card">
+            <figure class="relative">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                alt="Shoes" />
+                <span class="absolute bottom-2 right-2 text-sm rounded text-white bg-black px-2">3hrs 56 min ago</span>
+            </figure>
+            <div class="card-body flex-row px-0">
+                <div class="avatar">
+                    <div class="ring-primary ring-offset-base-100 w-10 h-10 rounded-full ring ring-offset-2">
+                      <img class="" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                    </div>
+                </div>
+                <div class="pl-3">
+                    <h2 class="card-title">Card Title</h2>
+                    <p class="flex gap-2 text-sm text-[#17171770]">sabbir hosssain <img class="w-6" src="https://img.icons8.com/?size=120&id=lalayI2ulYNt&format=png" alt=""></p>
+                    <p class="text-sm text-[#17171770]">sabbir hosssain</p>
+                  </div>
+            </div>
+        </div> -->
+     </section>
+
+
+    <!-- script linkUP -->
+     <script src="script/script.js"></script>
+ </body>
 </html>
